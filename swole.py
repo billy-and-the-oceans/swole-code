@@ -171,15 +171,11 @@ def cmd_suggest(args):
     if is_quiet_time(config):
         return
 
-    # Check cooldown (don't suggest if we logged something recently)
-    cooldown = config.get("cooldown_minutes", 10)
-    conn = get_db()
-    c = conn.cursor()
-    c.execute("SELECT timestamp FROM exercises WHERE completed = 1 ORDER BY timestamp DESC LIMIT 1")
-    row = c.fetchone()
-    conn.close()
-    if row:
-        last_time = datetime.datetime.fromisoformat(row['timestamp'])
+    # Check cooldown (don't suggest if we suggested recently)
+    cooldown = config.get("cooldown_minutes", 30)
+    last_suggested_file = SWOLE_DIR / "last_suggested"
+    if last_suggested_file.exists():
+        last_time = datetime.datetime.fromisoformat(last_suggested_file.read_text().strip())
         if (datetime.datetime.now() - last_time).total_seconds() < cooldown * 60:
             return
 
@@ -225,7 +221,11 @@ def cmd_suggest(args):
 
     with open(PENDING_FILE, "w") as f:
         json.dump(pending_data, f)
-        
+
+    # Save last suggested time for cooldown
+    last_suggested_file = SWOLE_DIR / "last_suggested"
+    last_suggested_file.write_text(datetime.datetime.now().isoformat())
+
     print(text)
 
 def cmd_confirm(args):

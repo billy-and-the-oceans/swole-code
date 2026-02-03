@@ -17,7 +17,7 @@ TASK_DESC=$(jq -r '.task_description // "task"' "$PENDING_FILE")
 
 # Show macOS dialog (non-blocking, runs in background)
 (
-  RESPONSE=$(osascript -e "display dialog \"SWOLE CODE\n\nDid you do $EXERCISE?\" buttons {\"Skip\", \"Done!\"} default button \"Done!\" with title \"Swole Code\" giving up after 30" 2>/dev/null)
+  RESPONSE=$(osascript -e "display dialog \"SWOLE CODE\n\nDid you do $EXERCISE?\" buttons {\"Skip\", \"Done!\"} default button \"Done!\" with title \"Swole Code\" giving up after 300" 2>/dev/null)
 
   if echo "$RESPONSE" | grep -q "Done!"; then
     "$SCRIPT_DIR/swole.py" log-complete
