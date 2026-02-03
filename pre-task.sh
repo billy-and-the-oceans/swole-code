@@ -75,7 +75,7 @@ EOF
 # If skipped or timed out, remove pending.json so no confirmation dialog appears
 if echo "$RESPONSE" | grep -q "Skip"; then
   rm -f "$SWOLE_DIR/pending.json"
-elif echo "$RESPONSE" | grep -q "gave up"; then
+elif echo "$RESPONSE" | grep -q "gave up:true"; then
   rm -f "$SWOLE_DIR/pending.json"
 fi
 ) &
