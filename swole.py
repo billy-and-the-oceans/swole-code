@@ -18,7 +18,7 @@ EXERCISES_FILE = Path(__file__).parent / "exercises.json"
 
 DEFAULT_CONFIG = {
     "enabled": True,
-    "cooldown_minutes": 10,
+    "cooldown_minutes": 30,
     "categories": {
         "legs": True,
         "upper": True,

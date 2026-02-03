@@ -68,7 +68,7 @@ Run `swole config` or press `c` in the dashboard:
 |--------|-------------|
 | **Enable/Disable** | Turn Swole Code on/off globally |
 | **Categories** | Toggle legs, upper, cardio, core |
-| **Cooldown** | Minutes between prompts (default: 10) |
+| **Cooldown** | Minutes between prompts (default: 30) |
 | **Quiet Hours** | No prompts during set hours (e.g., 22:00-08:00) |
 | **Custom Exercises** | Add your own exercises |
 
