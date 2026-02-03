@@ -10,11 +10,12 @@ We're shaving years off our lives watching spinning wheels. Might as well do som
 
 **1. Task starts → Exercise prompt appears:**
 
-<img width="400" alt="Exercise prompt dialog" src="https://github.com/user-attachments/assets/placeholder-start.png">
+<img width="1024" height="1024" alt="Image" src="https://github.com/user-attachments/assets/74839be1-5c84-49e6-83a7-55bb32a53282" />
+
 
 **2. Task ends → Confirmation dialog:**
 
-<img width="400" alt="Confirmation dialog" src="https://github.com/user-attachments/assets/placeholder-end.png">
+<img width="1024" height="1024" alt="Image" src="https://github.com/user-attachments/assets/fbe2e878-34f6-44f6-9bfa-c7dd19555d3d" />
 
 **3. Track your gains:**
 
