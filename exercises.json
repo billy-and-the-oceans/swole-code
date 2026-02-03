@@ -1,0 +1,39 @@
+{
+  "exercises": [
+    { "name": "airsquats", "count": 10, "category": "legs" },
+    { "name": "pushups", "count": 10, "category": "upper" },
+    { "name": "jumping jacks", "count": 20, "category": "cardio" },
+    { "name": "lunges", "count": 10, "category": "legs" },
+    { "name": "desk pushups", "count": 15, "category": "upper" },
+    { "name": "calf raises", "count": 20, "category": "legs" },
+    { "name": "wall sit", "count": 30, "unit": "seconds", "category": "legs" },
+    { "name": "plank", "count": 30, "unit": "seconds", "category": "core" },
+    { "name": "high knees", "count": 30, "unit": "seconds", "category": "cardio" },
+    { "name": "tricep dips", "count": 10, "category": "upper" },
+    { "name": "burpees", "count": 5, "category": "cardio" },
+    { "name": "mountain climbers", "count": 20, "category": "cardio" }
+  ],
+  "task_patterns": {
+    "high_confidence": [
+      "Explore",
+      "Plan",
+      "research",
+      "analyze",
+      "comprehensive",
+      "deep.?dive",
+      "full.?scan",
+      "investigate"
+    ],
+    "bash_triggers": [
+      "npm test",
+      "pytest",
+      "cargo build",
+      "cargo test",
+      "make",
+      "docker build",
+      "npm run build",
+      "yarn test",
+      "go test"
+    ]
+  }
+}

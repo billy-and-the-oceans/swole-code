@@ -1,0 +1,10 @@
+# Local state (not committed)
+.swole-code/
+*.log
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
