@@ -1,18 +1,144 @@
 {
   "exercises": [
-    { "name": "airsquats", "count": 10, "category": "legs" },
-    { "name": "pushups", "count": 10, "category": "upper" },
-    { "name": "jumping jacks", "count": 20, "category": "cardio" },
-    { "name": "lunges", "count": 10, "category": "legs" },
-    { "name": "desk pushups", "count": 15, "category": "upper" },
-    { "name": "calf raises", "count": 20, "category": "legs" },
-    { "name": "wall sit", "count": 30, "unit": "seconds", "category": "legs" },
-    { "name": "plank", "count": 30, "unit": "seconds", "category": "core" },
-    { "name": "high knees", "count": 30, "unit": "seconds", "category": "cardio" },
-    { "name": "tricep dips", "count": 10, "category": "upper" },
-    { "name": "burpees", "count": 5, "category": "cardio" },
-    { "name": "mountain climbers", "count": 20, "category": "cardio" }
+    {"name": "airsquats", "count": 10, "category": "legs", "intensity": "moderate"},
+    {"name": "pushups", "count": 10, "category": "upper", "intensity": "moderate"},
+    {"name": "jumping jacks", "count": 20, "category": "cardio", "intensity": "moderate"},
+    {"name": "lunges", "count": 10, "category": "legs", "intensity": "moderate"},
+    {"name": "desk pushups", "count": 15, "category": "upper", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "calf raises", "count": 20, "category": "legs", "intensity": "gentle"},
+    {"name": "wall sit", "count": 30, "unit": "seconds", "category": "legs", "intensity": "moderate"},
+    {"name": "plank", "count": 30, "unit": "seconds", "category": "core", "intensity": "moderate"},
+    {"name": "high knees", "count": 30, "unit": "seconds", "category": "cardio", "intensity": "moderate"},
+    {"name": "tricep dips", "count": 10, "category": "upper", "intensity": "moderate"},
+    {"name": "burpees", "count": 5, "category": "cardio", "intensity": "intense"},
+    {"name": "mountain climbers", "count": 20, "category": "cardio", "intensity": "intense"},
+
+    {"name": "horse stance", "count": 45, "unit": "seconds", "category": "legs", "intensity": "gentle", "tags": ["morning_park", "isometric"]},
+    {"name": "body waves", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "spine"]},
+    {"name": "cossack squat", "count": 5, "unit": "each side", "category": "legs", "intensity": "gentle", "tags": ["morning_park", "mobility"]},
+    {"name": "wrist circles", "count": 10, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "joints", "desk"]},
+    {"name": "hip circles", "count": 10, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "joints"]},
+    {"name": "neck rolls", "count": 5, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "joints", "desk"]},
+    {"name": "shoulder circles", "count": 10, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "joints", "desk"]},
+    {"name": "standing spinal twist", "count": 10, "unit": "each side", "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "spine"]},
+    {"name": "arm swings", "count": 20, "category": "mobility", "intensity": "gentle", "tags": ["morning_park", "warmup"]},
+    {"name": "standing marches", "count": 30, "unit": "seconds", "category": "cardio", "intensity": "gentle", "tags": ["morning_park", "warmup"]},
+
+    {"name": "kettlebell swing", "count": 15, "category": "full", "intensity": "moderate", "equipment": ["kettlebell"]},
+    {"name": "goblet squat", "count": 10, "category": "legs", "intensity": "moderate", "equipment": ["kettlebell", "dumbbells"]},
+    {"name": "kettlebell row", "count": 10, "unit": "each side", "category": "upper", "intensity": "moderate", "equipment": ["kettlebell", "dumbbells"]},
+    {"name": "around the world", "count": 8, "unit": "each direction", "category": "core", "intensity": "moderate", "equipment": ["kettlebell"]},
+    {"name": "kettlebell deadlift", "count": 10, "category": "legs", "intensity": "moderate", "equipment": ["kettlebell"]},
+    {"name": "kettlebell halo", "count": 8, "unit": "each direction", "category": "upper", "intensity": "gentle", "equipment": ["kettlebell"]},
+    {"name": "kettlebell clean", "count": 8, "unit": "each side", "category": "full", "intensity": "moderate", "equipment": ["kettlebell"]},
+    {"name": "kettlebell press", "count": 8, "unit": "each side", "category": "upper", "intensity": "moderate", "equipment": ["kettlebell"]},
+    {"name": "turkish getup", "count": 2, "unit": "each side", "category": "full", "intensity": "moderate", "equipment": ["kettlebell"]},
+
+    {"name": "pull-ups", "count": 5, "category": "upper", "intensity": "intense", "equipment": ["pull_up_bar"]},
+    {"name": "chin-ups", "count": 5, "category": "upper", "intensity": "intense", "equipment": ["pull_up_bar"]},
+    {"name": "dead hang", "count": 30, "unit": "seconds", "category": "upper", "intensity": "gentle", "equipment": ["pull_up_bar"]},
+    {"name": "hanging knee raises", "count": 10, "category": "core", "intensity": "moderate", "equipment": ["pull_up_bar"]},
+    {"name": "scapular pulls", "count": 10, "category": "upper", "intensity": "gentle", "equipment": ["pull_up_bar"]},
+
+    {"name": "band pull-aparts", "count": 15, "category": "upper", "intensity": "gentle", "equipment": ["resistance_bands"], "tags": ["posture"]},
+    {"name": "banded squats", "count": 15, "category": "legs", "intensity": "moderate", "equipment": ["resistance_bands"]},
+    {"name": "banded face pulls", "count": 15, "category": "upper", "intensity": "gentle", "equipment": ["resistance_bands"], "tags": ["posture"]},
+    {"name": "banded rows", "count": 15, "category": "upper", "intensity": "moderate", "equipment": ["resistance_bands"]},
+    {"name": "banded good mornings", "count": 12, "category": "legs", "intensity": "gentle", "equipment": ["resistance_bands"]},
+    {"name": "banded shoulder dislocates", "count": 10, "category": "mobility", "intensity": "gentle", "equipment": ["resistance_bands"], "tags": ["posture"]},
+
+    {"name": "glute bridge", "count": 15, "category": "legs", "intensity": "gentle"},
+    {"name": "single leg glute bridge", "count": 10, "unit": "each side", "category": "legs", "intensity": "moderate"},
+    {"name": "bird dog", "count": 10, "unit": "each side", "category": "core", "intensity": "gentle"},
+    {"name": "dead bug", "count": 10, "unit": "each side", "category": "core", "intensity": "gentle"},
+    {"name": "superman hold", "count": 20, "unit": "seconds", "category": "core", "intensity": "gentle"},
+    {"name": "hollow body hold", "count": 20, "unit": "seconds", "category": "core", "intensity": "moderate"},
+    {"name": "bicycle crunches", "count": 20, "category": "core", "intensity": "moderate"},
+    {"name": "russian twists", "count": 20, "category": "core", "intensity": "moderate"},
+    {"name": "leg raises", "count": 10, "category": "core", "intensity": "moderate"},
+    {"name": "flutter kicks", "count": 20, "category": "core", "intensity": "moderate"},
+    {"name": "side plank", "count": 20, "unit": "seconds each side", "category": "core", "intensity": "moderate"},
+
+    {"name": "cat-cow", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["spine", "desk"]},
+    {"name": "child's pose", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle"},
+    {"name": "downward dog", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle"},
+    {"name": "world's greatest stretch", "count": 5, "unit": "each side", "category": "mobility", "intensity": "gentle"},
+    {"name": "pigeon pose", "count": 30, "unit": "seconds each side", "category": "mobility", "intensity": "gentle"},
+    {"name": "figure four stretch", "count": 30, "unit": "seconds each side", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "hip flexor stretch", "count": 30, "unit": "seconds each side", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "chest doorway stretch", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle", "tags": ["posture", "desk"]},
+    {"name": "thoracic rotation", "count": 10, "unit": "each side", "category": "mobility", "intensity": "gentle", "tags": ["spine", "desk"]},
+    {"name": "thread the needle", "count": 8, "unit": "each side", "category": "mobility", "intensity": "gentle", "tags": ["spine"]},
+    {"name": "prone cobra", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["posture"]},
+    {"name": "wall angels", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["posture", "desk"]},
+    {"name": "chin tucks", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["posture", "desk"]},
+
+    {"name": "jump squats", "count": 10, "category": "legs", "intensity": "intense"},
+    {"name": "box jumps", "count": 8, "category": "legs", "intensity": "intense"},
+    {"name": "jump lunges", "count": 10, "category": "legs", "intensity": "intense"},
+    {"name": "tuck jumps", "count": 8, "category": "cardio", "intensity": "intense"},
+    {"name": "speed skaters", "count": 20, "category": "cardio", "intensity": "intense"},
+    {"name": "broad jumps", "count": 5, "category": "legs", "intensity": "intense"},
+    {"name": "squat thrusts", "count": 10, "category": "cardio", "intensity": "intense"},
+    {"name": "star jumps", "count": 10, "category": "cardio", "intensity": "intense"},
+
+    {"name": "diamond pushups", "count": 8, "category": "upper", "intensity": "moderate"},
+    {"name": "wide pushups", "count": 10, "category": "upper", "intensity": "moderate"},
+    {"name": "pike pushups", "count": 8, "category": "upper", "intensity": "moderate"},
+    {"name": "archer pushups", "count": 6, "unit": "each side", "category": "upper", "intensity": "intense"},
+    {"name": "decline pushups", "count": 10, "category": "upper", "intensity": "moderate"},
+    {"name": "wall pushups", "count": 15, "category": "upper", "intensity": "gentle", "tags": ["desk"]},
+
+    {"name": "sumo squats", "count": 12, "category": "legs", "intensity": "moderate"},
+    {"name": "split squats", "count": 10, "unit": "each side", "category": "legs", "intensity": "moderate"},
+    {"name": "step ups", "count": 10, "unit": "each side", "category": "legs", "intensity": "moderate"},
+    {"name": "reverse lunges", "count": 10, "category": "legs", "intensity": "moderate"},
+    {"name": "curtsy lunges", "count": 10, "category": "legs", "intensity": "moderate"},
+    {"name": "lateral lunges", "count": 10, "category": "legs", "intensity": "moderate"},
+    {"name": "wall squat hold", "count": 45, "unit": "seconds", "category": "legs", "intensity": "moderate"},
+    {"name": "single leg deadlift", "count": 8, "unit": "each side", "category": "legs", "intensity": "moderate"},
+
+    {"name": "standing forward fold", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle"},
+    {"name": "standing side stretch", "count": 20, "unit": "seconds each side", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "standing quad stretch", "count": 20, "unit": "seconds each side", "category": "mobility", "intensity": "gentle"},
+    {"name": "standing hamstring stretch", "count": 20, "unit": "seconds each side", "category": "mobility", "intensity": "gentle"},
+    {"name": "ankle circles", "count": 10, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "toe touches", "count": 10, "category": "mobility", "intensity": "gentle"},
+    {"name": "arm circles", "count": 10, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+
+    {"name": "eye palming", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle", "tags": ["eyes", "desk"]},
+    {"name": "eye circles", "count": 5, "unit": "each direction", "category": "mobility", "intensity": "gentle", "tags": ["eyes", "desk"]},
+    {"name": "focus shifting", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["eyes", "desk"]},
+    {"name": "20-20-20 break", "count": 20, "unit": "seconds", "category": "mobility", "intensity": "gentle", "tags": ["eyes", "desk"]},
+
+    {"name": "seated spinal twist", "count": 20, "unit": "seconds each side", "category": "mobility", "intensity": "gentle", "tags": ["desk", "spine"]},
+    {"name": "seated forward fold", "count": 30, "unit": "seconds", "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "seated cat-cow", "count": 10, "category": "mobility", "intensity": "gentle", "tags": ["desk", "spine"]},
+    {"name": "desk shoulder shrugs", "count": 15, "category": "mobility", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "seated leg raises", "count": 10, "category": "core", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "seated marches", "count": 20, "category": "cardio", "intensity": "gentle", "tags": ["desk"]},
+    {"name": "calf pumps", "count": 20, "category": "legs", "intensity": "gentle", "tags": ["desk"]},
+
+    {"name": "inchworms", "count": 5, "category": "full", "intensity": "moderate"},
+    {"name": "bear crawl", "count": 20, "unit": "steps", "category": "full", "intensity": "moderate"},
+    {"name": "crab walk", "count": 20, "unit": "steps", "category": "full", "intensity": "moderate"},
+    {"name": "frog jumps", "count": 8, "category": "legs", "intensity": "intense"},
+    {"name": "sprawls", "count": 8, "category": "cardio", "intensity": "intense"},
+
+    {"name": "dumbbell rows", "count": 10, "unit": "each side", "category": "upper", "intensity": "moderate", "equipment": ["dumbbells"]},
+    {"name": "dumbbell press", "count": 10, "category": "upper", "intensity": "moderate", "equipment": ["dumbbells"]},
+    {"name": "dumbbell curls", "count": 10, "category": "upper", "intensity": "moderate", "equipment": ["dumbbells"]},
+    {"name": "dumbbell lateral raises", "count": 10, "category": "upper", "intensity": "moderate", "equipment": ["dumbbells"]},
+    {"name": "dumbbell lunges", "count": 10, "category": "legs", "intensity": "moderate", "equipment": ["dumbbells"]},
+
+    {"name": "jump rope", "count": 60, "unit": "seconds", "category": "cardio", "intensity": "moderate", "equipment": ["jump_rope"]},
+    {"name": "double unders", "count": 20, "category": "cardio", "intensity": "intense", "equipment": ["jump_rope"]},
+
+    {"name": "foam roll quads", "count": 60, "unit": "seconds", "category": "mobility", "intensity": "gentle", "equipment": ["foam_roller"]},
+    {"name": "foam roll IT band", "count": 60, "unit": "seconds each side", "category": "mobility", "intensity": "gentle", "equipment": ["foam_roller"]},
+    {"name": "foam roll upper back", "count": 60, "unit": "seconds", "category": "mobility", "intensity": "gentle", "equipment": ["foam_roller"], "tags": ["posture"]}
   ],
+
   "task_patterns": {
     "high_confidence": [
       "Explore",
@@ -33,7 +159,42 @@
       "docker build",
       "npm run build",
       "yarn test",
-      "go test"
-    ]
+      "go test",
+      "mvn test",
+      "gradle build",
+      "flutter build",
+      "xcodebuild"
+    ],
+    "duration_estimates": {
+      "Explore": {"min": 2, "max": 10, "typical": 5},
+      "Plan": {"min": 3, "max": 15, "typical": 8},
+      "npm test": {"min": 1, "max": 10, "typical": 3},
+      "pytest": {"min": 1, "max": 15, "typical": 5},
+      "cargo build": {"min": 1, "max": 20, "typical": 5},
+      "cargo test": {"min": 1, "max": 10, "typical": 3},
+      "docker build": {"min": 2, "max": 30, "typical": 10},
+      "mvn test": {"min": 2, "max": 20, "typical": 8},
+      "gradle build": {"min": 1, "max": 15, "typical": 5},
+      "flutter build": {"min": 2, "max": 15, "typical": 6},
+      "xcodebuild": {"min": 3, "max": 30, "typical": 10}
+    }
+  },
+
+  "intensity_mapping": {
+    "gentle": {
+      "description": "Easy movements, joint-friendly, can do anytime",
+      "suitable_for": ["short_waits", "morning", "recovery_days"],
+      "examples": ["wrist circles", "horse stance", "cat-cow", "eye palming"]
+    },
+    "moderate": {
+      "description": "Actual work, but sustainable",
+      "suitable_for": ["medium_waits", "regular_days"],
+      "examples": ["pushups", "squats", "kettlebell swings", "plank"]
+    },
+    "intense": {
+      "description": "Heart rate up, sweat likely",
+      "suitable_for": ["long_waits", "hiit_sessions"],
+      "examples": ["burpees", "jump squats", "mountain climbers"]
+    }
   }
 }

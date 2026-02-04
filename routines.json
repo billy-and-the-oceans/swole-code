@@ -1,0 +1,635 @@
+{
+  "routine_types": [
+    {
+      "id": "hiit",
+      "name": "HIIT",
+      "description": "High-intensity interval training",
+      "typical_duration": [15, 45],
+      "intensity": "intense",
+      "icon": "fire"
+    },
+    {
+      "id": "kettlebell",
+      "name": "Kettlebell",
+      "description": "Kettlebell flows and strength work",
+      "typical_duration": [15, 30],
+      "intensity": "moderate",
+      "equipment": ["kettlebell"],
+      "icon": "weight"
+    },
+    {
+      "id": "pilates",
+      "name": "Pilates",
+      "description": "Core-focused controlled movements",
+      "typical_duration": [20, 45],
+      "intensity": "moderate",
+      "icon": "person"
+    },
+    {
+      "id": "barre",
+      "name": "Barre",
+      "description": "Ballet-inspired strength and flexibility",
+      "typical_duration": [20, 45],
+      "intensity": "moderate",
+      "icon": "ballet"
+    },
+    {
+      "id": "yoga",
+      "name": "Yoga",
+      "description": "Poses, breath work, flexibility",
+      "typical_duration": [15, 60],
+      "intensity": "gentle",
+      "icon": "lotus"
+    },
+    {
+      "id": "mobility",
+      "name": "Mobility",
+      "description": "Joint circles, dynamic stretches, movement prep",
+      "typical_duration": [5, 20],
+      "intensity": "gentle",
+      "icon": "stretch"
+    },
+    {
+      "id": "morning_park",
+      "name": "Morning Park",
+      "description": "Gentle movements like Chinese elders - horse stance, body waves, tai chi inspired",
+      "typical_duration": [10, 30],
+      "intensity": "gentle",
+      "icon": "sunrise"
+    },
+    {
+      "id": "strength",
+      "name": "Strength",
+      "description": "Resistance training for hypertrophy",
+      "typical_duration": [20, 45],
+      "intensity": "intense",
+      "icon": "muscle"
+    },
+    {
+      "id": "dance",
+      "name": "Dance",
+      "description": "Dance cardio, choreography",
+      "typical_duration": [15, 45],
+      "intensity": "moderate",
+      "icon": "dance"
+    },
+    {
+      "id": "floor",
+      "name": "Floor Work",
+      "description": "Mat-based exercises, bodyweight",
+      "typical_duration": [15, 30],
+      "intensity": "moderate",
+      "icon": "mat"
+    },
+    {
+      "id": "desk",
+      "name": "Desk Break",
+      "description": "Quick movements you can do at or near your desk",
+      "typical_duration": [3, 10],
+      "intensity": "gentle",
+      "icon": "chair"
+    },
+    {
+      "id": "posture",
+      "name": "Posture Reset",
+      "description": "Counter the effects of sitting and screen time",
+      "typical_duration": [5, 15],
+      "intensity": "gentle",
+      "icon": "spine"
+    },
+    {
+      "id": "eyes",
+      "name": "Eye Care",
+      "description": "Rest and exercises for screen-strained eyes",
+      "typical_duration": [2, 5],
+      "intensity": "gentle",
+      "icon": "eye"
+    }
+  ],
+
+  "equipment_types": [
+    {"id": "none", "name": "Bodyweight Only", "description": "No equipment needed"},
+    {"id": "kettlebell", "name": "Kettlebell", "description": "Cast iron bell with handle"},
+    {"id": "dumbbells", "name": "Dumbbells", "description": "Free weights"},
+    {"id": "resistance_bands", "name": "Resistance Bands", "description": "Elastic bands for resistance"},
+    {"id": "pull_up_bar", "name": "Pull-up Bar", "description": "Doorway or mounted bar"},
+    {"id": "yoga_mat", "name": "Yoga Mat", "description": "Cushioned floor mat"},
+    {"id": "foam_roller", "name": "Foam Roller", "description": "For mobility and recovery"},
+    {"id": "jump_rope", "name": "Jump Rope", "description": "For cardio intervals"},
+    {"id": "bench", "name": "Bench", "description": "Flat or adjustable bench"},
+    {"id": "barbell", "name": "Barbell", "description": "Olympic or standard bar with plates"}
+  ],
+
+  "weekly_patterns": [
+    {
+      "id": "freestyle",
+      "name": "Freestyle",
+      "description": "Random selection based on mood and time",
+      "schedule": null
+    },
+    {
+      "id": "upper_lower",
+      "name": "Upper/Lower Split",
+      "description": "Alternate upper and lower body focus",
+      "schedule": {
+        "monday": ["upper"],
+        "tuesday": ["lower"],
+        "wednesday": ["mobility"],
+        "thursday": ["upper"],
+        "friday": ["lower"],
+        "saturday": ["full"],
+        "sunday": ["mobility"]
+      }
+    },
+    {
+      "id": "push_pull_legs",
+      "name": "Push/Pull/Legs",
+      "description": "Classic 3-way split",
+      "schedule": {
+        "monday": ["push"],
+        "tuesday": ["pull"],
+        "wednesday": ["legs"],
+        "thursday": ["push"],
+        "friday": ["pull"],
+        "saturday": ["legs"],
+        "sunday": ["mobility"]
+      }
+    },
+    {
+      "id": "daily_mobility",
+      "name": "Daily Mobility + Intensity",
+      "description": "Light movement daily, one hard session",
+      "schedule": {
+        "monday": ["mobility"],
+        "tuesday": ["mobility"],
+        "wednesday": ["hiit", "strength"],
+        "thursday": ["mobility"],
+        "friday": ["mobility"],
+        "saturday": ["hiit", "strength"],
+        "sunday": ["mobility"]
+      }
+    },
+    {
+      "id": "morning_park_daily",
+      "name": "Morning Park Daily",
+      "description": "Gentle movements every day like the elders",
+      "schedule": {
+        "monday": ["morning_park"],
+        "tuesday": ["morning_park"],
+        "wednesday": ["morning_park"],
+        "thursday": ["morning_park"],
+        "friday": ["morning_park"],
+        "saturday": ["morning_park"],
+        "sunday": ["morning_park"]
+      }
+    },
+    {
+      "id": "coder_balanced",
+      "name": "Coder Balanced",
+      "description": "Posture and mobility focus with strength days",
+      "schedule": {
+        "monday": ["posture", "upper"],
+        "tuesday": ["mobility", "legs"],
+        "wednesday": ["desk", "core"],
+        "thursday": ["posture", "upper"],
+        "friday": ["mobility", "legs"],
+        "saturday": ["full", "cardio"],
+        "sunday": ["eyes", "mobility"]
+      }
+    }
+  ],
+
+  "sample_routines": [
+    {
+      "id": "horse_stance_flow",
+      "name": "Horse Stance Flow",
+      "type": "morning_park",
+      "duration_minutes": 10,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Ground yourself like a mountain",
+      "exercises": [
+        {"name": "wrist circles", "count": 20, "unit": "each direction"},
+        {"name": "hip circles", "count": 10, "unit": "each direction"},
+        {"name": "horse stance", "count": 60, "unit": "seconds"},
+        {"name": "body waves", "count": 10},
+        {"name": "cossack squat", "count": 5, "unit": "each side"}
+      ]
+    },
+    {
+      "id": "kettlebell_quick",
+      "name": "Kettlebell Quick Hit",
+      "type": "kettlebell",
+      "duration_minutes": 15,
+      "intensity": "moderate",
+      "equipment": ["kettlebell"],
+      "description": "Full body in 15 minutes",
+      "exercises": [
+        {"name": "kettlebell swing", "count": 20},
+        {"name": "goblet squat", "count": 10},
+        {"name": "kettlebell row", "count": 10, "unit": "each side"},
+        {"name": "around the world", "count": 10, "unit": "each direction"},
+        {"name": "turkish getup", "count": 2, "unit": "each side"}
+      ]
+    },
+    {
+      "id": "desk_mobility",
+      "name": "Desk Mobility Break",
+      "type": "desk",
+      "duration_minutes": 5,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Quick reset without leaving your desk area",
+      "exercises": [
+        {"name": "neck rolls", "count": 5, "unit": "each direction"},
+        {"name": "shoulder circles", "count": 10, "unit": "each direction"},
+        {"name": "seated spinal twist", "count": 20, "unit": "seconds each side"},
+        {"name": "wrist circles", "count": 10, "unit": "each direction"},
+        {"name": "standing side stretch", "count": 20, "unit": "seconds each side"}
+      ]
+    },
+    {
+      "id": "eye_reset",
+      "name": "Eye Reset",
+      "type": "eyes",
+      "duration_minutes": 3,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Give your eyes a break from the screen",
+      "exercises": [
+        {"name": "eye palming", "count": 30, "unit": "seconds"},
+        {"name": "eye circles", "count": 5, "unit": "each direction"},
+        {"name": "focus shifting", "count": 10},
+        {"name": "20-20-20 break", "count": 20, "unit": "seconds"}
+      ]
+    },
+    {
+      "id": "posture_reset",
+      "name": "Posture Reset",
+      "type": "posture",
+      "duration_minutes": 7,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Undo hours of hunching over a keyboard",
+      "exercises": [
+        {"name": "chin tucks", "count": 10},
+        {"name": "wall angels", "count": 10},
+        {"name": "chest doorway stretch", "count": 30, "unit": "seconds"},
+        {"name": "cat-cow", "count": 10},
+        {"name": "prone cobra", "count": 10},
+        {"name": "thoracic rotation", "count": 10, "unit": "each side"}
+      ]
+    },
+    {
+      "id": "quick_pump",
+      "name": "Quick Pump",
+      "type": "strength",
+      "duration_minutes": 5,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Fast strength circuit - perfect for test runs",
+      "exercises": [
+        {"name": "pushups", "count": 15},
+        {"name": "airsquats", "count": 20},
+        {"name": "plank", "count": 30, "unit": "seconds"},
+        {"name": "lunges", "count": 10}
+      ]
+    },
+    {
+      "id": "standing_flow",
+      "name": "Standing Flow",
+      "type": "mobility",
+      "duration_minutes": 8,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Full body mobility without getting on the floor",
+      "exercises": [
+        {"name": "arm circles", "count": 10, "unit": "each direction"},
+        {"name": "hip circles", "count": 10, "unit": "each direction"},
+        {"name": "standing spinal twist", "count": 10, "unit": "each side"},
+        {"name": "standing forward fold", "count": 30, "unit": "seconds"},
+        {"name": "standing quad stretch", "count": 20, "unit": "seconds each side"},
+        {"name": "calf raises", "count": 20}
+      ]
+    },
+    {
+      "id": "core_blast",
+      "name": "Core Blast",
+      "type": "floor",
+      "duration_minutes": 8,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Focused core work",
+      "exercises": [
+        {"name": "dead bug", "count": 10, "unit": "each side"},
+        {"name": "bird dog", "count": 10, "unit": "each side"},
+        {"name": "plank", "count": 45, "unit": "seconds"},
+        {"name": "bicycle crunches", "count": 20},
+        {"name": "side plank", "count": 20, "unit": "seconds each side"},
+        {"name": "hollow body hold", "count": 20, "unit": "seconds"}
+      ]
+    },
+    {
+      "id": "lower_body_burn",
+      "name": "Lower Body Burn",
+      "type": "strength",
+      "duration_minutes": 12,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Legs and glutes focus",
+      "exercises": [
+        {"name": "airsquats", "count": 15},
+        {"name": "lunges", "count": 10},
+        {"name": "glute bridge", "count": 15},
+        {"name": "wall sit", "count": 45, "unit": "seconds"},
+        {"name": "calf raises", "count": 20},
+        {"name": "sumo squats", "count": 12},
+        {"name": "single leg deadlift", "count": 8, "unit": "each side"}
+      ]
+    },
+    {
+      "id": "upper_body_blast",
+      "name": "Upper Body Blast",
+      "type": "strength",
+      "duration_minutes": 10,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Arms, chest, and back",
+      "exercises": [
+        {"name": "pushups", "count": 12},
+        {"name": "diamond pushups", "count": 8},
+        {"name": "wide pushups", "count": 10},
+        {"name": "tricep dips", "count": 12},
+        {"name": "pike pushups", "count": 8},
+        {"name": "plank", "count": 30, "unit": "seconds"}
+      ]
+    },
+    {
+      "id": "hiit_burner",
+      "name": "HIIT Burner",
+      "type": "hiit",
+      "duration_minutes": 15,
+      "intensity": "intense",
+      "equipment": [],
+      "description": "High intensity, maximum effort",
+      "exercises": [
+        {"name": "jumping jacks", "count": 30},
+        {"name": "burpees", "count": 8},
+        {"name": "mountain climbers", "count": 20},
+        {"name": "jump squats", "count": 12},
+        {"name": "high knees", "count": 30, "unit": "seconds"},
+        {"name": "speed skaters", "count": 20},
+        {"name": "plank", "count": 30, "unit": "seconds"}
+      ]
+    },
+    {
+      "id": "band_resistance",
+      "name": "Band Resistance Circuit",
+      "type": "strength",
+      "duration_minutes": 12,
+      "intensity": "moderate",
+      "equipment": ["resistance_bands"],
+      "description": "Full body with bands",
+      "exercises": [
+        {"name": "band pull-aparts", "count": 15},
+        {"name": "banded squats", "count": 15},
+        {"name": "banded rows", "count": 15},
+        {"name": "banded face pulls", "count": 15},
+        {"name": "banded good mornings", "count": 12}
+      ]
+    },
+    {
+      "id": "pull_up_bar_basics",
+      "name": "Pull-up Bar Basics",
+      "type": "strength",
+      "duration_minutes": 10,
+      "intensity": "moderate",
+      "equipment": ["pull_up_bar"],
+      "description": "Build upper body strength",
+      "exercises": [
+        {"name": "dead hang", "count": 30, "unit": "seconds"},
+        {"name": "scapular pulls", "count": 10},
+        {"name": "pull-ups", "count": 5},
+        {"name": "chin-ups", "count": 5},
+        {"name": "hanging knee raises", "count": 10}
+      ]
+    },
+    {
+      "id": "morning_energizer",
+      "name": "Morning Energizer",
+      "type": "mobility",
+      "duration_minutes": 10,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Wake up your body gently",
+      "exercises": [
+        {"name": "cat-cow", "count": 10},
+        {"name": "child's pose", "count": 30, "unit": "seconds"},
+        {"name": "downward dog", "count": 30, "unit": "seconds"},
+        {"name": "world's greatest stretch", "count": 5, "unit": "each side"},
+        {"name": "standing forward fold", "count": 30, "unit": "seconds"},
+        {"name": "arm circles", "count": 10, "unit": "each direction"}
+      ]
+    },
+    {
+      "id": "hip_opener",
+      "name": "Hip Opener Flow",
+      "type": "mobility",
+      "duration_minutes": 12,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Release tight hips from sitting",
+      "exercises": [
+        {"name": "hip circles", "count": 10, "unit": "each direction"},
+        {"name": "hip flexor stretch", "count": 30, "unit": "seconds each side"},
+        {"name": "pigeon pose", "count": 45, "unit": "seconds each side"},
+        {"name": "figure four stretch", "count": 30, "unit": "seconds each side"},
+        {"name": "cossack squat", "count": 8, "unit": "each side"},
+        {"name": "glute bridge", "count": 15}
+      ]
+    },
+    {
+      "id": "two_minute_reset",
+      "name": "Two Minute Reset",
+      "type": "desk",
+      "duration_minutes": 2,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Ultra-quick break between tasks",
+      "exercises": [
+        {"name": "neck rolls", "count": 5, "unit": "each direction"},
+        {"name": "shoulder circles", "count": 10, "unit": "each direction"},
+        {"name": "standing side stretch", "count": 10, "unit": "seconds each side"}
+      ]
+    },
+    {
+      "id": "youtube_caroline_epic_heat",
+      "name": "Caroline Girvan: EPIC Heat",
+      "type": "hiit",
+      "duration_minutes": 30,
+      "intensity": "intense",
+      "equipment": [],
+      "description": "No equipment HIIT from EPIC Heat program",
+      "url": "https://www.youtube.com/watch?v=Mvo2snJGhtM"
+    },
+    {
+      "id": "youtube_blogilates_10min_abs",
+      "name": "Blogilates: 10 Min Ab Workout",
+      "type": "pilates",
+      "duration_minutes": 10,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Cassey Ho's classic ab workout",
+      "url": "https://www.youtube.com/watch?v=5BaLHfgLZSM"
+    },
+    {
+      "id": "youtube_adriene_yoga_break",
+      "name": "Yoga With Adriene: Yoga Break",
+      "type": "yoga",
+      "duration_minutes": 15,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Quick yoga for the workday",
+      "url": "https://www.youtube.com/watch?v=M-8FvC3GD8c"
+    },
+    {
+      "id": "youtube_tom_merrick_hip",
+      "name": "Tom Merrick: Hip Flexibility",
+      "type": "mobility",
+      "duration_minutes": 20,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Deep hip opening routine",
+      "url": "https://www.youtube.com/watch?v=NG9qbvAN3gQ"
+    },
+    {
+      "id": "youtube_gmb_desk_mobility",
+      "name": "GMB: Desk Worker Mobility",
+      "type": "mobility",
+      "duration_minutes": 15,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Undo the damage of sitting",
+      "url": "https://www.youtube.com/watch?v=SIhhpv8_uh0"
+    },
+    {
+      "id": "youtube_caroline_full_body",
+      "name": "Caroline Girvan: Full Body Workout",
+      "type": "strength",
+      "duration_minutes": 45,
+      "intensity": "intense",
+      "equipment": ["dumbbells"],
+      "description": "Complete strength session",
+      "url": "https://www.youtube.com/watch?v=sY8vFMvWlFw"
+    },
+    {
+      "id": "youtube_sydney_cummings_cardio",
+      "name": "Sydney Cummings: 20 Min Cardio",
+      "type": "cardio",
+      "duration_minutes": 20,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "No jumping, apartment-friendly",
+      "url": "https://www.youtube.com/watch?v=vIm-fCrwMfU"
+    },
+    {
+      "id": "youtube_fitness_blender_stretch",
+      "name": "Fitness Blender: Full Body Stretch",
+      "type": "mobility",
+      "duration_minutes": 25,
+      "intensity": "gentle",
+      "equipment": [],
+      "description": "Comprehensive cool down stretch",
+      "url": "https://www.youtube.com/watch?v=sTxC3J3gQEU"
+    },
+    {
+      "id": "youtube_heather_robertson_hiit",
+      "name": "Heather Robertson: 20 Min HIIT",
+      "type": "hiit",
+      "duration_minutes": 20,
+      "intensity": "intense",
+      "equipment": [],
+      "description": "No repeat HIIT workout",
+      "url": "https://www.youtube.com/watch?v=ml6cT4AZdqI"
+    },
+    {
+      "id": "youtube_move_with_nicole_pilates",
+      "name": "Move With Nicole: 20 Min Pilates",
+      "type": "pilates",
+      "duration_minutes": 20,
+      "intensity": "moderate",
+      "equipment": [],
+      "description": "Full body mat pilates",
+      "url": "https://www.youtube.com/watch?v=K56Z12XNQ5c"
+    }
+  ],
+
+  "youtube_creators": [
+    {
+      "name": "Caroline Girvan",
+      "channel": "https://www.youtube.com/@CarolineGirvan",
+      "types": ["hiit", "strength", "kettlebell"],
+      "notes": "Epic programs, serious gains, no talking during workouts"
+    },
+    {
+      "name": "Blogilates",
+      "channel": "https://www.youtube.com/@blogilates",
+      "types": ["pilates", "barre", "hiit"],
+      "notes": "Upbeat, effective pop pilates"
+    },
+    {
+      "name": "Yoga With Adriene",
+      "channel": "https://www.youtube.com/@yogawithadriene",
+      "types": ["yoga", "mobility"],
+      "notes": "Accessible, kind, great for beginners"
+    },
+    {
+      "name": "GMB Fitness",
+      "channel": "https://www.youtube.com/@GoldMedalBodies",
+      "types": ["mobility", "floor"],
+      "notes": "Movement quality focus, great for desk workers"
+    },
+    {
+      "name": "Tom Merrick",
+      "channel": "https://www.youtube.com/@BodyweightWarrior",
+      "types": ["mobility", "flexibility"],
+      "notes": "Deep flexibility work, follow-along routines"
+    },
+    {
+      "name": "Sydney Cummings",
+      "channel": "https://www.youtube.com/@SydneyCummings",
+      "types": ["hiit", "strength", "cardio"],
+      "notes": "Daily workouts, motivational, all fitness levels"
+    },
+    {
+      "name": "Fitness Blender",
+      "channel": "https://www.youtube.com/@fitnessblender",
+      "types": ["hiit", "strength", "mobility"],
+      "notes": "Huge library, no music versions available"
+    },
+    {
+      "name": "Heather Robertson",
+      "channel": "https://www.youtube.com/@HeatherRobertson",
+      "types": ["hiit", "strength", "pilates"],
+      "notes": "12-week programs, timer-based workouts"
+    },
+    {
+      "name": "Move With Nicole",
+      "channel": "https://www.youtube.com/@MoveWithNicole",
+      "types": ["pilates", "barre"],
+      "notes": "Classical pilates, clear instruction"
+    },
+    {
+      "name": "THENX",
+      "channel": "https://www.youtube.com/@OFFICIALTHENX",
+      "types": ["strength", "floor"],
+      "notes": "Calisthenics, bodyweight progressions"
+    },
+    {
+      "name": "Hybrid Calisthenics",
+      "channel": "https://www.youtube.com/@HybridCalisthenics",
+      "types": ["strength", "mobility"],
+      "notes": "Progressions for all levels, encouraging"
+    }
+  ]
+}
