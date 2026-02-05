@@ -126,20 +126,27 @@ if [ -f "$COOLDOWN_FILE" ]; then
   fi
 fi
 
-# Pick a random exercise using swole.py
+# Pick a random exercise using swole.py (creates suggestion, not pending)
 EXERCISE_TEXT=$("$SCRIPT_DIR/swole.py" suggest --task "$DESCRIPTION" 2>/dev/null)
 
 if [ -z "$EXERCISE_TEXT" ]; then
   exit 0
 fi
 
-# Note: Python's suggest command already updates the cooldown file (last_suggested)
-# so we don't need to write it here
-
-# Show macOS notification (non-blocking, doesn't steal focus)
+# Show interactive notification - clicking accepts the exercise
+# The -group option replaces old notifications with same ID (prevents spam)
+# The -execute option runs 'swole accept' when user clicks the notification
 if command -v terminal-notifier &> /dev/null; then
-  terminal-notifier -title "SWOLE CODE" -subtitle "Time to move!" -message "$EXERCISE_TEXT" -sound Glass
+  terminal-notifier \
+    -title "SWOLE CODE" \
+    -subtitle "Click to accept, close to skip" \
+    -message "$EXERCISE_TEXT" \
+    -sound Glass \
+    -group "swole-suggestion" \
+    -sender com.apple.Terminal \
+    -execute "$HOME/.local/bin/swole accept"
 else
+  # Fallback: just show notification (no interactivity)
   osascript -e "display notification \"$EXERCISE_TEXT\" with title \"SWOLE CODE\" subtitle \"Time to move!\" sound name \"Glass\""
 fi
 

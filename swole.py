@@ -21,6 +21,7 @@ SWOLE_DIR = Path(os.environ.get("SWOLE_CODE_DIR", Path.home() / ".swole-code"))
 DB_PATH = SWOLE_DIR / "data.db"
 LOG_FILE = SWOLE_DIR / "log.md"
 PENDING_FILE = SWOLE_DIR / "pending.json"
+SUGGESTION_FILE = SWOLE_DIR / "suggestion.json"  # Pre-acceptance suggestion
 CONFIG_FILE = SWOLE_DIR / "config.json"
 DAY_FILE = SWOLE_DIR / "day.json"
 EXERCISES_FILE = Path(__file__).parent / "exercises.json"
@@ -1918,6 +1919,7 @@ def main_menu():
 # --- Hook Commands (for Claude Code integration) ---
 
 def cmd_hook_suggest(args):
+    """Suggest an exercise - creates suggestion file (not pending yet)."""
     config = load_config()
     if not config.get("enabled", True):
         return
@@ -1928,6 +1930,10 @@ def cmd_hook_suggest(args):
         last_time = datetime.datetime.fromisoformat(last_suggested_file.read_text().strip())
         if (datetime.datetime.now() - last_time).total_seconds() < cooldown * 60:
             return
+
+    # Don't suggest if there's already a pending or suggestion
+    if PENDING_FILE.exists() or SUGGESTION_FILE.exists():
+        return
 
     exercises = load_exercises() + config.get("custom_exercises", [])
     user_equipment = set(config.get("equipment", ["none"]))
@@ -1945,7 +1951,8 @@ def cmd_hook_suggest(args):
     text = f"{count} {unit} {name}" if unit != "reps" else f"{count} {name}"
 
     SWOLE_DIR.mkdir(parents=True, exist_ok=True)
-    with open(PENDING_FILE, "w") as f:
+    # Write to suggestion file (not pending - user must accept first)
+    with open(SUGGESTION_FILE, "w") as f:
         json.dump({
             "type": "exercise", "exercise": text, "data": exercise,
             "task_description": args.task if args.task else "task",
@@ -1953,6 +1960,7 @@ def cmd_hook_suggest(args):
         }, f)
 
     last_suggested_file.write_text(datetime.datetime.now().isoformat())
+    # Output the exercise text for the hook script to use in notification
     print(text)
 
 def cmd_hook_log_complete(args):
@@ -1972,6 +1980,30 @@ def cmd_hook_log_complete(args):
 def cmd_hook_log_skip(args):
     if PENDING_FILE.exists():
         os.remove(PENDING_FILE)
+
+
+def cmd_hook_accept(args):
+    """Accept a suggested exercise - moves suggestion to pending."""
+    if not SUGGESTION_FILE.exists():
+        print("No exercise suggestion to accept")
+        return
+
+    # Move suggestion to pending
+    with open(SUGGESTION_FILE) as f:
+        suggestion = json.load(f)
+
+    suggestion['accepted_at'] = datetime.datetime.now().isoformat()
+
+    with open(PENDING_FILE, 'w') as f:
+        json.dump(suggestion, f)
+
+    # Clean up suggestion file
+    os.remove(SUGGESTION_FILE)
+
+    # Show confirmation notification
+    exercise = suggestion.get('exercise', 'exercise')
+    send_notification("SWOLE CODE", "Accepted!", f"Do {exercise} while I work", "Glass")
+    print(f"Accepted: {exercise}")
 
 
 # --- Morning Commands ---
@@ -2312,6 +2344,7 @@ def main():
 
     p_suggest = subparsers.add_parser('suggest', help='Suggest an exercise (for hooks)')
     p_suggest.add_argument('--task', help='Task description')
+    subparsers.add_parser('accept', help='Accept suggested exercise (moves to pending)')
     subparsers.add_parser('log-complete', help='Log pending as complete (for hooks)')
     subparsers.add_parser('log-skip', help='Skip pending (for hooks)')
 
@@ -2357,6 +2390,8 @@ def main():
 
     if args.command == 'suggest':
         cmd_hook_suggest(args)
+    elif args.command == 'accept':
+        cmd_hook_accept(args)
     elif args.command == 'log-complete':
         cmd_hook_log_complete(args)
     elif args.command == 'log-skip':
